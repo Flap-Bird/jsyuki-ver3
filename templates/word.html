@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>認証ページ</title>
+    <script src="https://www.google.com/recaptcha/api.js?hl=ja" async defer></script>
+    <script type="text/javascript">
+        var onSuccess = function(response) {
+            console.log('認証成功:', response);
+            alert('');
+            document.cookie = "yuki=True; path=/;";
+            location.reload();
+            
+            
+        };
+    </script>
+    <script src="https://js.hcaptcha.com/1/api.js?hl=ja" async defer></script>
+
+
+    <script>
+        function onSuccess(token) {
+    document.cookie = "yuki=True; path=/;";
+    location.reload(true);
+    }
+    </script>
+    <script>
+// ページをリロードする関数
+    function reloadPage() {
+     location.reload();
+    }
+    </script>
+    <style>
+        /* コンテナを画面の中央に配置 */
+        .recaptcha-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* ビューポートの高さに合わせる */
+        }
+    </style>
+    <style>
+        /* コンテナを画面の中央に配置 */
+        .t {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* ビューポートの高さに合わせる */
+        }
+    </style>
+</head>
+<body>
+ <div class="recaptcha-container">
+    <div class="h-captcha" 
+     data-sitekey="{{token}}" 
+     data-callback="onSuccess" 
+     data-lang="ja"></div>
+    <h1>　認証 - hCaptcha</h1>
+ </div><button onclick="reloadPage()">認証を完了</button>
+    <br>
+    
+    
+    <!-- FC2カウンター ここから -->
+<script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=89505886"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=89505886" /></noscript>
+<!-- FC2カウンター ここまで -->
+ </div>
+</body>
+</html>
